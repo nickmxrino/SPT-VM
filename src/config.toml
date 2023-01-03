@@ -33,8 +33,21 @@
 "Scav to PMC" = 0 # default : x
 
 # Trader Section
+# / flea options
+"Flea Level" = 15 # default : 15
+"Disable Flea" = false # default : false
+"Disable Flea Blacklist" = false # default : false
+# / fence options
+"Assortment Size" = 100 # default : 100
+# / trader options
+"Disable Insurance" = false # default : false
+"Hybrid Clothing" = false # default : false
 
 # Hideout Section
+"Instant Construction" = false # default : false
+"Construction Modifier" = 1.0 # default : 1.0
+"Instant Production" = false # default : false
+"Production Modifier" = 1.0 # default : 1.0
 
 # InRaid Section
 

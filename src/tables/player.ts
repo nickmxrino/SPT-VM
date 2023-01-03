@@ -15,7 +15,7 @@ export default function init(): void
 
     // retrieving config files from the aki server
     const configServer = container.resolve<ConfigServer>("ConfigServer");
-    const inventoryConfig = configServer.getConfig<IInventoryConfig>(ConfigTypes.BOT);
+    const inventoryConfig = configServer.getConfig<IInventoryConfig>(ConfigTypes.INVENTORY);
 
     // tries to read the config file and stores it in "config"
     const config = toml.parse(fs.readFileSync("./../config.toml","utf-8"));
