@@ -9,7 +9,8 @@ export class Mod implements IPostDBLoadMod
     public postDBLoad(container: DependencyContainer): void
     {
         tables.initPlayer();
-
+        tables.initSkills();
+        
         const logger = container.resolve<ILogger>("Logger");
         fs.readdir("./tables/", (err, files) =>
         {
