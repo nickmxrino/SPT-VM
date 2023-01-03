@@ -20,8 +20,15 @@ export default function init(): void
     // tries to read the config file and stores it in "config"
     const config = toml.parse(fs.readFileSync("./../config.toml","utf-8"));
     
-    if (config["All Items Examined"])
-        inventoryConfig.newItemsMarkedFound = true;
+    // short gameplay options
+    if (config["All Items Examined"]) inventoryConfig.newItemsMarkedFound = true;
+    if (config["Scavmode Cooldown"] !== 1200) globals.SavagePlayCooldown = config["Scavmode Cooldown"];
+    if (config["Weight Modifier"] !== 1.0) for (const id in items) items[id]._props.Weight *= config["Weight Modifier"];
+    
+    // short health options
+    if (config["Disable Fall Damage"]) globals.Health.Falling.DamagePerMeter = 0;
+    if (config["Energy Drain"] !== 3.2) globals.Health.Effects.Existence.EnergyDamage = config["Energy Drain"];
+    if (config["Hydration Drain"] !== 2.6) globals.Health.Effects.Existence.HydrationDamage = config["Hydration Drain"];
 
     if (config["Armored Rigs"])
         for (const id in items)
@@ -77,8 +84,9 @@ export default function init(): void
         }
     }
 
-    if (config["Weight Modifier"] !== 1.0) 
-        for (const id in items) items[id]._props.Weight *= config["Weight Modifier"];
-
-
+    if (config["Disable Hunger"])
+    {
+        globals.Health.Effects.Existence.EnergyDamage = 0;
+        globals.Health.Effects.Existence.HydrationDamage = 0;
+    }
 }

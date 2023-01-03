@@ -1,19 +1,29 @@
 # Player Section
+# / gameplay options
 "All Items Examined" = false # default : false
 "Armored Rigs" = false # default : false
 "Disable Container Restrictions" = false # default : false
 "Disable Backpack Restrictions" = false # default : false
 "Disable Penalties" = false # default : false
 "Disable Malfunctions" = false # default : false
+"Scavmode Cooldown" = 1200 # default : 1200 seconds
 "Weight Modifier" = 1.0 # default : 1.0x
-"Scavenger Cooldown" = 1200 # default : 1200 seconds
-
+# / health options
 "Disable Fall Damage" = false # default : false
 "Disable Hunger" = false # default : false
 "Energy Drain" = 3.2 # default : 3.2
 "Hydration Drain" = 2.6 # default : 2.6
 
 # Skill Section
+# / experience modifiers
+"Survived" = 1.3
+"Killed" = 1.0
+"Runthru" = 0.5
+"Headshot" = 1.2
+# / skill modifiers
+"Wep Skill Modifier" = 1.0 # default 1.0
+"Soft Skill Modifier" = 0.4 # default : 0.4
+"Disable Skill Fatigue" = false # default : false
 
 # Bot Section
 
