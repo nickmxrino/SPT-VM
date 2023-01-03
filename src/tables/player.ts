@@ -24,29 +24,35 @@ export default function init(): void
     if (config["All Items Examined"]) inventoryConfig.newItemsMarkedFound = true;
     if (config["Scavmode Cooldown"] !== 1200) globals.SavagePlayCooldown = config["Scavmode Cooldown"];
     if (config["Weight Modifier"] !== 1.0) for (const id in items) items[id]._props.Weight *= config["Weight Modifier"];
-    
+
     // short health options
     if (config["Disable Fall Damage"]) globals.Health.Falling.DamagePerMeter = 0;
     if (config["Energy Drain"] !== 3.2) globals.Health.Effects.Existence.EnergyDamage = config["Energy Drain"];
     if (config["Hydration Drain"] !== 2.6) globals.Health.Effects.Existence.HydrationDamage = config["Hydration Drain"];
 
     if (config["Armored Rigs"])
+    {
         for (const id in items)
             // checks for restriction property and disables it
             if (items[id]._props.BlocksArmorVest) 
                 items[id]._props.BlocksArmorVest = false;
+    }
 
     if (config["Disable Container Restrictions"])
+    {
         for (const id in items)
             // if an item is a container ... clears the item filter
             if (items[id]._parent === "5448bf274bdc2dfc2f8b456a")
                 items[id]._props.Grids[0]._props.filters = [];
+    }
 
     if (config["Disable Backpack Restrictions"])
+    {
         for (const id in items)
             // if an item is a backpack ... clears the item filter
             if (items[id]._parent === "5448e53e4bdc2d60728b4567")
                 items[id]._props.Grids[0]._props.filters = [];
+    }
 
     if (config["Disable Penalties"])
     {
