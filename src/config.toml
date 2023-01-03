@@ -100,4 +100,12 @@
 "STR Gluhar %" = 0.6 # default : 0.60 / within ZoneCarShowroom
 "STR Gluhar Guards" = [ 2, 2, 2 ] # (t1,t2,t3) default : 2, 2, 2
 "STR Killa %" = 0.6 # default : 0.60 / within ZoneHotel_1/ZoneHotel_2
+
 # AirDrop Section
+# / chance options
+"ad-customs" = 1.0 # default : 1.0
+"ad-woods" = 1.0 # default : 1.0
+"ad-lighthouse" = 1.0 # default : 1.0
+"ad-shoreline" = 1.0 # default : 1.0
+"ad-interchange" = 1.0 # default : 1.0
+"ad-reserve" = 1.0 # default : 1.0
