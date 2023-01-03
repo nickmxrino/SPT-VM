@@ -5,10 +5,13 @@
 "Disable Backpack Restrictions" = false # default : false
 "Disable Penalties" = false # default : false
 "Disable Malfunctions" = false # default : false
-"Item Weight Modifier" = 1.0 # default : 1.0x
+"Weight Modifier" = 1.0 # default : 1.0x
 "Scavenger Cooldown" = 1200 # default : 1200 seconds
 
-# Health Section
+"Disable Fall Damage" = false # default : false
+"Disable Hunger" = false # default : false
+"Energy Drain" = 3.2 # default : 3.2
+"Hydration Drain" = 2.6 # default : 2.6
 
 # Skill Section
 
