@@ -1,3 +1,5 @@
+# * changing any values WILL alter something, so be careful! * #
+
 # Player Section
 # / gameplay options
 "All Items Examined" = false # default : false
@@ -16,13 +18,13 @@
 
 # Skill Section
 # / experience modifiers
-"Survived" = 1.3
-"Killed" = 1.0
-"Runthru" = 0.5
-"Headshot" = 1.2
+"Survived" = 1.3 # default : 1.30
+"Killed" = 1.0 # default : 1.0
+"Runthru" = 0.5 # default : 0.50
+"Headshot" = 1.2 # default : 1.20
 # / skill modifiers
-"Wep Skill Modifier" = 1.0 # default 1.0
-"Soft Skill Modifier" = 0.4 # default : 0.4
+"Wep Skill Rate" = 1.0 # default 1.0
+"Soft Skill Rate" = 0.4 # default : 0.4
 "Disable Skill Fatigue" = false # default : false
 
 # Bot Section
