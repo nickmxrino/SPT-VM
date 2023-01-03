@@ -50,7 +50,54 @@
 "Production Modifier" = 1.0 # default : 1.0
 
 # InRaid Section
-
-# Weather Section
-
+# / general options
+"Consistent Extracts" = false # default : false
+# / duration options
+"Customs" = 40 # default : 40
+"Factory" = 20 # default : 20
+"Interchange" = 40 # default : 40
+"Labs" = 35 # default : 35
+"Reserve" = 40 # default : 40
+"Shoreline" = 45 # default : 45
+"Woods" = 40 # default : 40
+"Lighthouse" = 40 # default : 40
+"Streets" = 50 # default : 50
+# / reshala options
+"Reshala %" = 5 # default : 5
+"Reshala Guards" = 4 # default : 4
+"Reshala Locations" = "ZoneDormitory,ZoneGasStation" # default : "ZoneDormitory,ZoneGasStation"
+"Customs Cultist %" = 2 # default : 2
+"Customs Goonsquad %" = 5 # default : 5 / within ZoneScavBase
+# / killa options
+"Killa %" = 5 # default : 5
+        # default : "ZoneCenterBot,ZoneCenter,ZoneOLI,ZoneIDEA,ZoneGoshan,ZoneIDEAPark,ZoneOLIPark"
+"Killa Locations" = "ZoneCenterBot,ZoneCenter,ZoneOLI,ZoneIDEA,ZoneGoshan,ZoneIDEAPark,ZoneOLIPark"
+# / tagilla options
+"Tagilla Day %" = 5 # default : 5
+"Tagilla Night %" = 10 # default : 10
+"Factory Cultist %" = 2 # default : 2
+# / gluhar options
+"Gluhar %" = 5 # default : 5
+"Gluhar Guards" = [ 2, 2, 2 ] # (t1,t2,t3) default : 2, 2, 2
+         # default : "ZoneRailStrorage,ZoneRailStrorage,ZoneRailStrorage,ZonePTOR1,ZonePTOR2,ZoneBarrack,ZoneBarrack,ZoneBarrack,ZoneSubStorage"
+"Gluhar Locations" = "ZoneRailStrorage,ZoneRailStrorage,ZoneRailStrorage,ZonePTOR1,ZonePTOR2,ZoneBarrack,ZoneBarrack,ZoneBarrack,ZoneSubStorage"
+# / shturman options
+"Shturman %" = 5 # default : 5
+"Shturman Guards" = 2 # default : 2
+"Woods Cultist %" = 3 # default : 3
+"Woods Goonsquad %" = 5 # default : 5 / within ZoneScavBase2
+# / sanitar options
+"Sanitar %" = 5 # default : 5
+"Sanitar Guards" = 2 # default : 3
+          # default : "ZonePort,ZoneGreenHouses,ZoneSanatorium1,ZoneGreenHouses,ZoneSanatorium2"
+"Sanitar Locations" = "ZonePort,ZoneGreenHouses,ZoneSanatorium1,ZoneGreenHouses,ZoneSanatorium2"
+"Shoreline Cultist %" = 3 # default : 3
+"Shoreline Goonsquad %" = 5 # default : 5 / within ZoneMeteoStation
+# / lighthouse options
+"Lighthouse Goonsquad %" = 5 # default : 5
+"Lighthouse Goonsquad Locations" = "Zone_TreatmentContainers,Zone_Chalet" # default : "Zone_TreatmentContainers,Zone_Chalet"
+# / streets options
+"STR Gluhar %" = 0.6 # default : 0.60 / within ZoneCarShowroom
+"STR Gluhar Guards" = [ 2, 2, 2 ] # (t1,t2,t3) default : 2, 2, 2
+"STR Killa %" = 0.6 # default : 0.60 / within ZoneHotel_1/ZoneHotel_2
 # AirDrop Section
