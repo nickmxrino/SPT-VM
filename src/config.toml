@@ -1,0 +1,25 @@
+# Player Section
+"All Items Examined" = false # default : false
+"Armored Rigs" = false # default : false
+"Disable Container Restrictions" = false # default : false
+"Disable Backpack Restrictions" = false # default : false
+"Disable Penalties" = false # default : false
+"Disable Malfunctions" = false # default : false
+"Item Weight Modifier" = 1.0 # default : 1.0x
+"Scavenger Cooldown" = 1200 # default : 1200 seconds
+
+# Health Section
+
+# Skill Section
+
+# Bot Section
+
+# Trader Section
+
+# Hideout Section
+
+# InRaid Section
+
+# Weather Section
+
+# AirDrop Section
