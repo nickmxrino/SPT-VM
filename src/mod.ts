@@ -8,13 +8,23 @@ export class Mod implements IPostDBLoadMod
 {
     public postDBLoad(container: DependencyContainer): void
     {
-        tables.initPlayer();
-        tables.initSkills();
-        
         const logger = container.resolve<ILogger>("Logger");
-        fs.readdir("./tables/", (err, files) =>
+        try
         {
-            logger.info(`Initialized ${files.length - 1} tables.`);
-        });
+            tables.initPlayer();
+            tables.initSkills();
+            tables.initBots();
+        }
+        catch (err)
+        {
+            logger.info(err);
+        }
+        finally
+        { 
+            fs.readdir("./tables/", (err, files) =>
+            {
+                logger.info(`Initialized ${files.length - 1} SPT-VM modules.`);
+            });
+        }
     }
 }

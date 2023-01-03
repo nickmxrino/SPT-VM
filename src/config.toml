@@ -28,6 +28,9 @@
 "Disable Skill Fatigue" = false # default : false
 
 # Bot Section
+"Usec:Bear" = 50 # default : 50
+"Friendly Fire Chance" = 50 # default : 50
+"Scav to PMC" = 0 # default : x
 
 # Trader Section
 
