@@ -12,7 +12,7 @@ export default function init(): void
     const botConfig = configServer.getConfig<IBotConfig>(ConfigTypes.BOT);
 
     // tries to read the config file and stores it in "config"
-    const config = toml.parse(fs.readFileSync("./../config.toml","utf-8"));
+    const config = toml.parse(fs.readFileSync("../config","utf-8"));
 
     // just lazy
     botConfig.pmc.isUsec = config["Usec:Bear"];

@@ -10,7 +10,7 @@ export default function init(): void
     const globals = tables.globals.config;
 
     // tries to read the config file and stores it in "config"
-    const config = toml.parse(fs.readFileSync("./../config.toml","utf-8"));
+    const config = toml.parse(fs.readFileSync("../config","utf-8"));
 
     // short skill multiplier options
     if (config["Survived"] != 1.3) globals.exp.match_end.survivedMult = config["Survived"];

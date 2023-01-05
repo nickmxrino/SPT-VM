@@ -18,7 +18,7 @@ export default function init(): void
     const inventoryConfig = configServer.getConfig<IInventoryConfig>(ConfigTypes.INVENTORY);
 
     // tries to read the config file and stores it in "config"
-    const config = toml.parse(fs.readFileSync("./../config.toml","utf-8"));
+    const config = toml.parse(fs.readFileSync("../config","utf-8"));
     
     // short gameplay options
     if (config["All Items Examined"]) inventoryConfig.newItemsMarkedFound = true;

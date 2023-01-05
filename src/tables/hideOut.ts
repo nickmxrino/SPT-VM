@@ -3,7 +3,7 @@ import toml from "toml";
 import { container } from "tsyringe";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 
-const config = toml.parse(fs.readFileSync("./../config.toml","utf-8"));
+const config = toml.parse(fs.readFileSync("../config","utf-8"));
 
 function constructionModify(configCase: number): void
 {

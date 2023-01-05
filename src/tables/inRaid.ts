@@ -45,7 +45,7 @@ function initDurations(durations: number): void
 export default function init(): void
 {
     // tries to read the config file and stores it in "config"
-    const config = toml.parse(fs.readFileSync("./../config.toml","utf-8"));
+    const config = toml.parse(fs.readFileSync("../config","utf-8"));
     // retrieving tables from the database server
     const tables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
     const locations = tables.locations;

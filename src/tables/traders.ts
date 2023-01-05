@@ -20,7 +20,7 @@ export default function init(): void
     const traderConfig = configServer.getConfig<ITraderConfig>(ConfigTypes.TRADER);
 
     // tries to read the config file and stores it in "config"
-    const config = toml.parse(fs.readFileSync("./../config.toml","utf-8"));
+    const config = toml.parse(fs.readFileSync("../config","utf-8"));
 
     globals.RagFair.minUserLevel = config["Flea Level"];
     globals.RagFair.enabled = (!config["Disable Flea"]);

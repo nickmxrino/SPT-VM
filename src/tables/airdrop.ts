@@ -8,7 +8,7 @@ import { IAirdropConfig } from "@spt-aki/models/spt/config/IAirdropConfig";
 export default function airdrop(): void
 {
     // tries to read the config file and stores it in "config"
-    const config = toml.parse(fs.readFileSync("./../config.toml","utf-8"));
+    const config = toml.parse(fs.readFileSync("../config","utf-8"));
 
     // retrieving config files from the aki server
     const configServer = container.resolve<ConfigServer>("ConfigServer");
