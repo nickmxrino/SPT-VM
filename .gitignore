@@ -1,0 +1,9 @@
+src/tables/airdrop.js
+src/tables/index.js
+src/tables/skills.js
+src/tables/player.js
+src/tables/hideOut.js
+src/tables/bots.js
+src/tables/inRaid.js
+src/mod.js
+src/tables/traders.js
