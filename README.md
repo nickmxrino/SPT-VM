@@ -59,22 +59,22 @@ format: `option = default / type : property descripton`
 **Consistent Extracts** = *false* / boolean : make all ??? extracts always available   
 
 **Raid Duration** : modify raid time   
-> Customs = *40*   
-> Factory = *20*   
-> Interchange = *40*   
-> Labs = *35*   
-> Reserve = *40*   
-> Shoreline = *45*   
-> Woods = *40*   
-> Lighthouse = *40*   
-> Streets = *50*   
+> Customs: *40*   
+> Factory: *20*   
+> Interchange: *40*   
+> Labs: *35*   
+> Reserve: *40*   
+> Shoreline: *45*   
+> Woods: *40*   
+> Lighthouse: *40*   
+> Streets: *50*   
 
 **Boss Section** : modify chance, guard count, and location of each scav boss   
-> Reshala Locations = "ZoneDormitory,ZoneGasStation"   
-> Killa Locations = "ZoneCenterBot,ZoneCenter,ZoneOLI,ZoneIDEA,ZoneGoshan,ZoneIDEAPark,ZoneOLIPark"   
-> Gluhar Locations = "ZoneRailStrorage,ZoneRailStrorage,ZoneRailStrorage,ZonePTOR1,ZonePTOR2,ZoneBarrack,ZoneBarrack,ZoneBarrack,ZoneSubStorage"   
-> Sanitar Locations = "ZonePort,ZoneGreenHouses,ZoneSanatorium1,ZoneGreenHouses,ZoneSanatorium2"   
-> Goonsquad Locations = "Zone_TreatmentContainers,Zone_Chalet"   
+> Reshala Locations: "ZoneDormitory,ZoneGasStation"   
+> Killa Locations: "ZoneCenterBot,ZoneCenter,ZoneOLI,ZoneIDEA,ZoneGoshan,ZoneIDEAPark,ZoneOLIPark"   
+> Gluhar Locations: "ZoneRailStrorage,ZoneRailStrorage,ZoneRailStrorage,ZonePTOR1,ZonePTOR2,ZoneBarrack,ZoneBarrack,ZoneBarrack,ZoneSubStorage"   
+> Sanitar Locations: "ZonePort,ZoneGreenHouses,ZoneSanatorium1,ZoneGreenHouses,ZoneSanatorium2"   
+> Goonsquad Locations: "Zone_TreatmentContainers,Zone_Chalet"   
 
 ### Airdrop Section
 **ad-map** = *1.0* / float : modify the chance of an airdrop occuring in each map   
