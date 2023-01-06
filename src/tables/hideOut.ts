@@ -43,7 +43,7 @@ export default function init(): void
 {
     // function calls in config decision cases
     if (config.Hideout["Instant Construction"]) constructionModify(1);
-    if (config.Hideout["Construction Modifier"] !== 1.0) constructionModify(2);
+    else if (config.Hideout["Construction Modifier"] !== 1.0) constructionModify(2);
     if (config.Hideout["Instant Production"]) productionModify(1);
-    if (config.Hideout["Production Modifier"] !== 1.0) productionModify(2);
+    else if (config.Hideout["Production Modifier"] !== 1.0) productionModify(2);
 }

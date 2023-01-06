@@ -81,10 +81,12 @@ export default function init(): void
     initDurations(raidDurations);
 
     if (config.InRaid["Consistent Extracts"])
-        for (const map in locations)
-            if (locations[map] !== "base")
-                for (const exit in locations[map].base.exits)
-                    locations[map].base.exits[exit].Chance = 100;
+        for (const x in locations)
+            if (x !== "base")
+                for (const y in locations[x].base.exits)
+                    if (locations[x].base.exits[y].Name !== "EXFIL_Train")
+                        if (locations[x].base.exits[y].Chance !== 100)
+                            locations[x].base.exits[y].Chance = 100;
 
     // customs (reshala) handling
     customsReshala.BossChance = config.InRaid.Reshala["Reshala %"];
