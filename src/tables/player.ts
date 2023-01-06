@@ -17,14 +17,21 @@ export default function init(): void
     const inventoryConfig = configServer.getConfig<IInventoryConfig>(ConfigTypes.INVENTORY);
     
     // short gameplay options
-    if (config.Player["All Items Examined"]) inventoryConfig.newItemsMarkedFound = true;
-    if (config.Player["Scavmode Cooldown"] !== 1200) globals.SavagePlayCooldown = config["Scavmode Cooldown"];
-    if (config.Player["Weight Modifier"] !== 1.0) for (const id in items) items[id]._props.Weight *= config["Weight Modifier"];
+    if (config.Player["All Items Examined"])
+        inventoryConfig.newItemsMarkedFound = true;
+
+    globals.SavagePlayCooldown = config.Player["Scavmode Cooldown"];
+
+    if (config.Player["Weight Modifier"] !== 1.0)
+        for (const id in items)
+            items[id]._props.Weight *= config.Player["Weight Modifier"];
 
     // short health options
-    if (config.Player.Health["Disable Fall Damage"]) globals.Health.Falling.DamagePerMeter = 0;
-    if (config.Player.Health["Energy Drain"] !== 3.2) globals.Health.Effects.Existence.EnergyDamage = config["Energy Drain"];
-    if (config.Player.Health["Hydration Drain"] !== 2.6) globals.Health.Effects.Existence.HydrationDamage = config["Hydration Drain"];
+    if (config.Player.Health["Disable Fall Damage"])
+        globals.Health.Falling.DamagePerMeter = 0;
+
+    globals.Health.Effects.Existence.EnergyDamage = config.Player.Health["Energy Drain"];
+    globals.Health.Effects.Existence.HydrationDamage = config.Player.Health["Hydration Drain"];
 
     if (config.Player["Armored Rigs"])
     {
