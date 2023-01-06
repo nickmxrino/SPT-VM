@@ -1,9 +1,6 @@
-import * as fs from "fs";
-import toml from "toml";
 import { container } from "tsyringe";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
-
-const config = toml.parse(fs.readFileSync("../config","utf-8"));
+import config from "../config.json";
 
 function constructionModify(configCase: number): void
 {
@@ -20,7 +17,7 @@ function constructionModify(configCase: number): void
             if (configCase === 1) // if the user wants to make construction instant...
                 current.constructionTime = 1;
             else if (configCase === 2) // if the user wants to modify construction time...
-                current.constructionTime *= config["Construction Modifier"];
+                current.constructionTime *= config.Hideout["Construction Modifier"];
         }
     } 
 }
@@ -38,15 +35,15 @@ function productionModify(configCase: number): void
         if (configCase === 1) // if the user wants to make production instant...
             current.productionTime = 1;
         else if (configCase === 2) // if the user wants to modify production time...
-            current.productionTime *= config["Production Modifier"];
+            current.productionTime *= config.Hideout["Production Modifier"];
     }
 }
 
 export default function init(): void
 {
     // function calls in config decision cases
-    if (config["Instant Construction"]) constructionModify(1);
-    if (config["Construction Modifier"] !== 1.0) constructionModify(2);
-    if (config["Instant Production"]) productionModify(1);
-    if (config["Production Modifier"] !== 1.0) productionModify(2);
+    if (config.Hideout["Instant Construction"]) constructionModify(1);
+    if (config.Hideout["Construction Modifier"] !== 1.0) constructionModify(2);
+    if (config.Hideout["Instant Production"]) productionModify(1);
+    if (config.Hideout["Production Modifier"] !== 1.0) productionModify(2);
 }

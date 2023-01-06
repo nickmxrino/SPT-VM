@@ -1,0 +1,146 @@
+{
+    "Player": {
+        "All Items Examined": false,
+        "Armored Rigs": false,
+        "Disable Container Restrictions": false,
+        "Disable Backpack Restrictions":false,
+        "Disable Penalties": false,
+        "Disable Malfunctions": false,
+        "Scavmode Cooldown": 1200,
+        "Weight Modifier": 1.0,
+
+        "Health": {
+            "Disable Fall Damage": false,
+            "Disable Hunger": false,
+            "Energy Drain": 3.2,
+            "Hydration Drain": 2.6
+        }
+    },
+
+    "Skill": {
+        "Experience": {
+            "Survived": 1.3,
+            "Killed": 1.0,
+            "Runthru": 0.5,
+            "Headshot": 1.2
+        },
+
+        "Wep Skill Rate": 1.0,
+        "Soft Skill Rate": 0.4,
+        "Disable Skill Fatigue": false
+    },
+
+    "Bots": {
+        "Usec:Bear": 50,
+        "Friendly Fire Chance": 50,
+
+        "PMC Generation": {
+            "Scav to PMC Min": 0,
+            "Scav to PMC Max": 0,
+            "Raider to PMC Min": 0,
+            "Raider to PMC Max": 0,
+            "Rogue to PMC Min": 0,
+            "Rogue to PMC Max": 0
+        }
+    },
+
+    "Traders": {
+        "Flea": {
+            "Flea Level": 15,
+            "Disable Flea": false,
+            "Disable Flea Blacklist": false
+        },
+
+        "Fence": {
+            "Assortment Size": 100
+        },
+
+        "Trader": {
+            "Disable Insurance": false,
+            "Hybrid Clothing": false
+        }
+    },
+
+    "Hideout": {
+        "Instant Construction": false,
+        "Construction Modifier": 1.0,
+        "Instant Production": false,
+        "Production Modifier": 1.0
+    },
+
+    "InRaid": {
+        "Consistent Extracts": false,
+
+        "Raid Duration": {
+            "Customs": 40,
+            "Factory": 20,
+            "Interchange": 40,
+            "Labs": 35,
+            "Reserve": 40,
+            "Shoreline": 45,
+            "Woods": 40,
+            "Lighthouse": 40,
+            "Streets": 50
+        },
+
+        "Reshala": {
+            "Reshala %": 5,
+            "Reshala Guards": "4",
+            "Reshala Locations": "ZoneDormitory,ZoneGasStation",
+            "Customs Cultist %": 2,
+            "Customs Goonsquad %": 5
+        },
+
+        "Killa": {
+            "Killa %": 5,
+            "Killa Locations": "ZoneCenterBot,ZoneCenter,ZoneOLI,ZoneIDEA,ZoneGoshan,ZoneIDEAPark,ZoneOLIPark"
+        },
+
+        "Tagilla": {
+            "Tagilla Day %": 5,
+            "Tagilla Night %": 10,
+            "Factory Cultist %": 2
+        },
+
+        "Gluhar": {
+            "Gluhar %": 5,
+            "Gluhar Guards": ["2", "2", "2"],
+            "Gluhar Locations": "ZoneRailStrorage,ZoneRailStrorage,ZoneRailStrorage,ZonePTOR1,ZonePTOR2,ZoneBarrack,ZoneBarrack,ZoneBarrack,ZoneSubStorage"
+        },
+
+        "Shturman": {
+            "Shturman %": 5,
+            "Shturman Guards": "2",
+            "Woods Cultist %": 3,
+            "Woods Goonsquad %": 5
+        },
+
+        "Sanitar": {
+            "Sanitar %": 5,
+            "Sanitar Guards": "2",
+            "Sanitar Locations": "ZonePort,ZoneGreenHouses,ZoneSanatorium1,ZoneGreenHouses,ZoneSanatorium2",
+            "Shoreline Cultist %": 3,
+            "Shoreline Goonsquad %": 5
+        },
+
+        "Lighthouse": {
+            "Lighthouse Goonsquad %": 5,
+            "Lighthouse Goonsquad Locations": "Zone_TreatmentContainers,Zone_Chalet"
+        },
+
+        "Streets": {
+            "STR Gluhar %": 0.6,
+            "STR Gluhar Guards": ["2", "2", "2"],
+            "STR Killa %": 0.6
+        }
+    },
+
+    "Airdrops": {
+        "ad-customs": 1.0,
+        "ad-woods": 1.0,
+        "ad-lighthouse": 1.0,
+        "ad-shoreline": 1.0,
+        "ad-interchange": 1.0,
+        "ad-reserve": 1.0
+    }
+}

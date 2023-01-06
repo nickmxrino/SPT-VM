@@ -1,10 +1,9 @@
-import * as fs from "fs";
-import toml from "toml";
 import { container } from "tsyringe";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 import { ConfigServer } from "@spt-aki/servers/ConfigServer";
 import { ConfigTypes } from "@spt-aki/models/enums/ConfigTypes";
 import { ITraderConfig } from "@spt-aki/models/spt/config/ITraderConfig";
+import config from "../config.json";
 
 export default function init(): void
 {
@@ -19,22 +18,19 @@ export default function init(): void
     const configServer = container.resolve<ConfigServer>("ConfigServer");
     const traderConfig = configServer.getConfig<ITraderConfig>(ConfigTypes.TRADER);
 
-    // tries to read the config file and stores it in "config"
-    const config = toml.parse(fs.readFileSync("../config","utf-8"));
+    globals.RagFair.minUserLevel = config.Traders.Flea["Flea Level"];
+    globals.RagFair.enabled = (!config.Traders.Flea["Disable Flea"]);
+    traderConfig.fence.assortSize = config.Traders.Fence["Assortment Size"];
 
-    globals.RagFair.minUserLevel = config["Flea Level"];
-    globals.RagFair.enabled = (!config["Disable Flea"]);
-    traderConfig.fence.assortSize = config["Assortment Size"];
-
-    if (config["Disable Fleamarket Blacklist"])
+    if (config.Traders.Flea["Disable Fleamarket Blacklist"])
         for (const id in items)
             items[id]._props.CanSellOnRagfair = true
 
-    if (config["Disable Insurance"])
+    if (config.Traders.Trader["Disable Insurance"])
         for (const id in traders)
             traders[id].base.insurance.availability = false;
 
-    if (config["Hybrid Clothing"])
+    if (config.Traders.Trader["Hybrid Clothing"])
         for (const item in clothing)
             clothing[item]._props.Side = ["Usec", "Bear", "Savage"];
 }

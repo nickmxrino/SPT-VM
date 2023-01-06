@@ -8,7 +8,7 @@ export class Mod implements IPostDBLoadMod
 {
     public postDBLoad(container: DependencyContainer): void
     {
-        const logger = container.resolve<ILogger>("Logger");
+        const logger = container.resolve<ILogger>("WinstonLogger");
         const status = initMod();
         if (status)
             fs.readdir("./tables/", (err, files) => logger.info(`Initialized ${files.length - 1} SPT-VM modules.`));
@@ -16,3 +16,5 @@ export class Mod implements IPostDBLoadMod
             logger.info("Issue occured attempting to load SPT-VM.");
     }
 }
+
+module.exports = { mod: new Mod() };

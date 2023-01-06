@@ -1,7 +1,6 @@
-import * as fs from "fs";
-import toml from "toml";
 import { container } from "tsyringe";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
+import config from "../config.json";
 
 function initDurations(durations: number): void
 {
@@ -44,8 +43,6 @@ function initDurations(durations: number): void
 
 export default function init(): void
 {
-    // tries to read the config file and stores it in "config"
-    const config = toml.parse(fs.readFileSync("../config","utf-8"));
     // retrieving tables from the database server
     const tables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
     const locations = tables.locations;
@@ -71,70 +68,70 @@ export default function init(): void
     const streetsKilla = locations["tarkovstreets"].base.BossLocationSpawn[2];
     
     const raidDurations: any = [
-        config["Customs"],
-        config["Factory"],
-        config["Interchange"],
-        config["Labs"],
-        config["Reserve"],
-        config["Shoreline"],
-        config["Woods"],
-        config["Lighthouse"],
-        config["Streets"]
+        config.InRaid["Raid Duration"]["Customs"],
+        config.InRaid["Raid Duration"]["Factory"],
+        config.InRaid["Raid Duration"]["Interchange"],
+        config.InRaid["Raid Duration"]["Labs"],
+        config.InRaid["Raid Duration"]["Reserve"],
+        config.InRaid["Raid Duration"]["Shoreline"],
+        config.InRaid["Raid Duration"]["Woods"],
+        config.InRaid["Raid Duration"]["Lighthouse"],
+        config.InRaid["Raid Duration"]["Streets"]
     ];
 
     initDurations(raidDurations);
 
-    if (config["Consistent Extracts"])
+    if (config.InRaid["Consistent Extracts"])
         for (const map in locations)
             if (locations[map] !== "base")
                 for (const exit in locations[map].base.exits)
                     locations[map].base.exits[exit].Chance = 100;
 
     // customs (reshala) handling
-    customsReshala.BossChance = config["Reshala %"];
-    customsReshala.BossEscortAmount = config["Reshala Guards"];
-    customsReshala.BossZone = config["Reshala Locations"];
-    customsCultist.BossChance = config["Customs Cultist %"];
-    customsGoonsquad.BossChance = config["Customs Goonsquad %"];
+    customsReshala.BossChance = config.InRaid.Reshala["Reshala %"];
+    customsReshala.BossEscortAmount = config.InRaid.Reshala["Reshala Guards"];
+    customsReshala.BossZone = config.InRaid.Reshala["Reshala Locations"];
+    customsCultist.BossChance = config.InRaid.Reshala["Customs Cultist %"];
+    customsGoonsquad.BossChance = config.InRaid.Reshala["Customs Goonsquad %"];
 
     // interchange (killa) handling
-    interchangeKilla.BossChance = config["Killa %"];
-    interchangeKilla.BossZone = config["Killa Locations"];
+    interchangeKilla.BossChance = config.InRaid.Killa["Killa %"];
+    interchangeKilla.BossZone = config.InRaid.Killa["Killa Locations"];
 
     // factory (tagilla) handling
-    dayFactoryTagilla.BossChance = config["Tagilla Day %"];
-    nightFactoryTagilla.BossChance = config["Tagilla Night %"];
-    nightFactoryCultist.BossChance = config["Factory Cultist %"];
+    dayFactoryTagilla.BossChance = config.InRaid.Tagilla["Tagilla Day %"];
+    nightFactoryTagilla.BossChance = config.InRaid.Tagilla["Tagilla Night %"];
+    nightFactoryCultist.BossChance = config.InRaid.Tagilla["Factory Cultist %"];
 
     // reserve (gluhar) handling
-    reserveGluhar.BossChance = config["Gluhar %"];
-    reserveGluhar.Supports[0].BossEscortAmount = config["Gluhar Guards"][2]; // security
-    reserveGluhar.Supports[1].BossEscortAmount = config["Gluhar Guards"][1]; // assault
-    reserveGluhar.Supports[2].BossEscortAmount = config["Gluhar Guards"][0]; // scouts
-    reserveGluhar.BossZone = config["Gluhar Locations"];
+    reserveGluhar.BossChance = config.InRaid.Gluhar["Gluhar %"];
+    reserveGluhar.Supports[0].BossEscortAmount = config.InRaid.Gluhar["Gluhar Guards"][2]; // security
+    reserveGluhar.Supports[1].BossEscortAmount = config.InRaid.Gluhar["Gluhar Guards"][1]; // assault
+    reserveGluhar.Supports[2].BossEscortAmount = config.InRaid.Gluhar["Gluhar Guards"][0]; // scouts
+    reserveGluhar.BossZone = config.InRaid.Gluhar["Gluhar Locations"];
 
     // woods (shturman) handling
-    woodsShturman.BossChance = config["Shturman %"];
-    woodsShturman.BossEscortAmount = config["Shturman Guards"];
-    woodsCultist.BossChance = config["Woods Cultist %"];
-    woodsGoonsquad.BossChance = config["Woods Goonsquad %"];
+    woodsShturman.BossChance = config.InRaid.Shturman["Shturman %"];
+    woodsShturman.BossEscortAmount = config.InRaid.Shturman["Shturman Guards"];
+    woodsCultist.BossChance = config.InRaid.Shturman["Woods Cultist %"];
+    woodsGoonsquad.BossChance = config.InRaid.Shturman["Woods Goonsquad %"];
 
     // sanitar (shoreline) handling
-    shorelineSanitar.BossChance = config["Sanitar %"];
-    shorelineSanitar.BossEscortAmount = config["Sanitar Guards"];
-    shorelineSanitar.BossZone = config["Sanitar Locations"];
-    shorelineCultist1.BossChance = config["Shoreline Cultist %"];
-    shorelineCultist2.BossChance = config["Shoreline Cultist %"];
-    shorelineGoonsquad.BossChance = config["Shoreline Goonsquad %"];
+    shorelineSanitar.BossChance = config.InRaid.Sanitar["Sanitar %"];
+    shorelineSanitar.BossEscortAmount = config.InRaid.Sanitar["Sanitar Guards"];
+    shorelineSanitar.BossZone = config.InRaid.Sanitar["Sanitar Locations"];
+    shorelineCultist1.BossChance = config.InRaid.Sanitar["Shoreline Cultist %"];
+    shorelineCultist2.BossChance = config.InRaid.Sanitar["Shoreline Cultist %"];
+    shorelineGoonsquad.BossChance = config.InRaid.Sanitar["Shoreline Goonsquad %"];
 
     // lighthouse (goons/antlerman) handling
-    lighthouseGoonsquad.BossChance = config["Lighthouse Goonsquad %"];
-    lighthouseGoonsquad.BossZone = config["Lighthouse Goonsquad Locations"];
+    lighthouseGoonsquad.BossChance = config.InRaid.Lighthouse["Lighthouse Goonsquad %"];
+    lighthouseGoonsquad.BossZone = config.InRaid.Lighthouse["Lighthouse Goonsquad Locations"];
     
     // streets (gluhar/killa) handling
-    streetsGluhar.BossChance = config["STR Gluhar %"];
-    streetsGluhar.Supports[0].BossEscortAmount = config["STR Gluhar Guards"][2]; // security
-    streetsGluhar.Supports[1].BossEscortAmount = config["STR Gluhar Guards"][1]; // assault
-    streetsGluhar.Supports[2].BossEscortAmount = config["STR Gluhar Guards"][0]; // scouts
-    streetsKilla.BossChance = config["STR Killa %"];
+    streetsGluhar.BossChance = config.InRaid.Streets["STR Gluhar %"];
+    streetsGluhar.Supports[0].BossEscortAmount = config.InRaid.Streets["STR Gluhar Guards"][2]; // security
+    streetsGluhar.Supports[1].BossEscortAmount = config.InRaid.Streets["STR Gluhar Guards"][1]; // assault
+    streetsGluhar.Supports[2].BossEscortAmount = config.InRaid.Streets["STR Gluhar Guards"][0]; // scouts
+    streetsKilla.BossChance = config.InRaid.Streets["STR Killa %"];
 }

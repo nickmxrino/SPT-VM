@@ -1,10 +1,9 @@
-import * as fs from "fs";
-import toml from "toml";
 import { container } from "tsyringe";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 import { ConfigServer } from "@spt-aki/servers/ConfigServer";
 import { ConfigTypes } from "@spt-aki/models/enums/ConfigTypes";
 import { IInventoryConfig } from "@spt-aki/models/spt/config/IInventoryConfig";
+import config from "../config.json";
 
 export default function init(): void
 {
@@ -16,21 +15,18 @@ export default function init(): void
     // retrieving config files from the aki server
     const configServer = container.resolve<ConfigServer>("ConfigServer");
     const inventoryConfig = configServer.getConfig<IInventoryConfig>(ConfigTypes.INVENTORY);
-
-    // tries to read the config file and stores it in "config"
-    const config = toml.parse(fs.readFileSync("../config","utf-8"));
     
     // short gameplay options
-    if (config["All Items Examined"]) inventoryConfig.newItemsMarkedFound = true;
-    if (config["Scavmode Cooldown"] !== 1200) globals.SavagePlayCooldown = config["Scavmode Cooldown"];
-    if (config["Weight Modifier"] !== 1.0) for (const id in items) items[id]._props.Weight *= config["Weight Modifier"];
+    if (config.Player["All Items Examined"]) inventoryConfig.newItemsMarkedFound = true;
+    if (config.Player["Scavmode Cooldown"] !== 1200) globals.SavagePlayCooldown = config["Scavmode Cooldown"];
+    if (config.Player["Weight Modifier"] !== 1.0) for (const id in items) items[id]._props.Weight *= config["Weight Modifier"];
 
     // short health options
-    if (config["Disable Fall Damage"]) globals.Health.Falling.DamagePerMeter = 0;
-    if (config["Energy Drain"] !== 3.2) globals.Health.Effects.Existence.EnergyDamage = config["Energy Drain"];
-    if (config["Hydration Drain"] !== 2.6) globals.Health.Effects.Existence.HydrationDamage = config["Hydration Drain"];
+    if (config.Player.Health["Disable Fall Damage"]) globals.Health.Falling.DamagePerMeter = 0;
+    if (config.Player.Health["Energy Drain"] !== 3.2) globals.Health.Effects.Existence.EnergyDamage = config["Energy Drain"];
+    if (config.Player.Health["Hydration Drain"] !== 2.6) globals.Health.Effects.Existence.HydrationDamage = config["Hydration Drain"];
 
-    if (config["Armored Rigs"])
+    if (config.Player["Armored Rigs"])
     {
         for (const id in items)
             // checks for restriction property and disables it
@@ -38,7 +34,7 @@ export default function init(): void
                 items[id]._props.BlocksArmorVest = false;
     }
 
-    if (config["Disable Container Restrictions"])
+    if (config.Player["Disable Container Restrictions"])
     {
         for (const id in items)
             // if an item is a container ... clears the item filter
@@ -46,7 +42,7 @@ export default function init(): void
                 items[id]._props.Grids[0]._props.filters = [];
     }
 
-    if (config["Disable Backpack Restrictions"])
+    if (config.Player["Disable Backpack Restrictions"])
     {
         for (const id in items)
             // if an item is a backpack ... clears the item filter
@@ -54,7 +50,7 @@ export default function init(): void
                 items[id]._props.Grids[0]._props.filters = [];
     }
 
-    if (config["Disable Penalties"])
+    if (config.Player["Disable Penalties"])
     {
         for (const id in items)
         {   // if the item is a piece of headwear...
@@ -73,7 +69,7 @@ export default function init(): void
         }
     }
 
-    if (config["Disable Malfunctions"])
+    if (config.Player["Disable Malfunctions"])
     {
         for (const id in items)
         {   // checks if an item has malfunction props and disables them
@@ -90,7 +86,7 @@ export default function init(): void
         }
     }
 
-    if (config["Disable Hunger"])
+    if (config.Player.Health["Disable Hunger"])
     {
         globals.Health.Effects.Existence.EnergyDamage = 0;
         globals.Health.Effects.Existence.HydrationDamage = 0;
