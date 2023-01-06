@@ -47,25 +47,24 @@ export default function init(): void
     const tables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
     const locations = tables.locations;
 
-    // index 0 of boss arrays belongs to santa/gifter ...
-    const customsGoonsquad = locations["bigmap"].base.BossLocationSpawn[1];
-    const customsReshala = locations["bigmap"].base.BossLocationSpawn[2];
-    const customsCultist = locations["bigmap"].base.BossLocationSpawn[3];
-    const interchangeKilla = locations["interchange"].base.BossLocationSpawn[1];
-    const dayFactoryTagilla = locations["factory4_day"].base.BossLocationSpawn[1];
+    const customsGoonsquad = locations["bigmap"].base.BossLocationSpawn[0];
+    const customsReshala = locations["bigmap"].base.BossLocationSpawn[1];
+    const customsCultist = locations["bigmap"].base.BossLocationSpawn[2];
+    const interchangeKilla = locations["interchange"].base.BossLocationSpawn[0];
+    const dayFactoryTagilla = locations["factory4_day"].base.BossLocationSpawn[0];
     const nightFactoryTagilla = locations["factory4_night"].base.BossLocationSpawn[0];
     const nightFactoryCultist = locations["factory4_night"].base.BossLocationSpawn[1];
-    const reserveGluhar = locations["rezervbase"].base.BossLocationSpawn[1];
-    const woodsGoonsquad = locations["woods"].base.BossLocationSpawn[1];
-    const woodsShturman = locations["woods"].base.BossLocationSpawn[2];
-    const woodsCultist = locations["woods"].base.BossLocationSpawn[3];
-    const shorelineGoonsquad = locations["shoreline"].base.BossLocationSpawn[1];
-    const shorelineSanitar = locations["shoreline"].base.BossLocationSpawn[2];
-    const shorelineCultist1 = locations["shoreline"].base.BossLocationSpawn[3];
-    const shorelineCultist2 = locations["shoreline"].base.BossLocationSpawn[4];
-    const lighthouseGoonsquad = locations["lighthouse"].base.BossLocationSpawn[2];
-    const streetsGluhar = locations["tarkovstreets"].base.BossLocationSpawn[1];
-    const streetsKilla = locations["tarkovstreets"].base.BossLocationSpawn[2];
+    const reserveGluhar = locations["rezervbase"].base.BossLocationSpawn[0];
+    const woodsGoonsquad = locations["woods"].base.BossLocationSpawn[0];
+    const woodsShturman = locations["woods"].base.BossLocationSpawn[1];
+    const woodsCultist = locations["woods"].base.BossLocationSpawn[2];
+    const shorelineGoonsquad = locations["shoreline"].base.BossLocationSpawn[0];
+    const shorelineSanitar = locations["shoreline"].base.BossLocationSpawn[1];
+    const shorelineCultist1 = locations["shoreline"].base.BossLocationSpawn[2];
+    const shorelineCultist2 = locations["shoreline"].base.BossLocationSpawn[3];
+    const lighthouseGoonsquad = locations["lighthouse"].base.BossLocationSpawn[1];
+    const streetsGluhar = locations["tarkovstreets"].base.BossLocationSpawn[0];
+    const streetsKilla = locations["tarkovstreets"].base.BossLocationSpawn[1];
     
     const raidDurations: any = [
         config.InRaid["Raid Duration"]["Customs"],

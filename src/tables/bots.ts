@@ -14,10 +14,8 @@ export default function init(): void
     botConfig.pmc.chanceSameSideIsHostilePercent = config.Bots["Friendly Fire Chance"];
     botConfig.pmc.convertIntoPmcChance.assault.min = config.Bots["PMC Generation"]["Scav to PMC Min"];
     botConfig.pmc.convertIntoPmcChance.assault.max = config.Bots["PMC Generation"]["Scav to PMC Max"];
-    botConfig.pmc.convertIntoPmcChance.cursedAssault.min = 0; // we dont like cursed assault pmcs
-    botConfig.pmc.convertIntoPmcChance.cursedAssault.max = 0;
-    botConfig.pmc.convertIntoPmcChance.marksman.min = 0; // we dont like sniper pmcs
-    botConfig.pmc.convertIntoPmcChance.marksman.max = 0;
+    botConfig.pmc.convertIntoPmcChance.cursedassault.min = 0; // we dont like cursed assault pmcs
+    botConfig.pmc.convertIntoPmcChance.cursedassault.max = 0;
     botConfig.pmc.convertIntoPmcChance.pmcbot.min = config.Bots["PMC Generation"]["Raider to PMC Min"];
     botConfig.pmc.convertIntoPmcChance.pmcbot.max = config.Bots["PMC Generation"]["Raider to PMC Max"];
     botConfig.pmc.convertIntoPmcChance.exusec.min = config.Bots["PMC Generation"]["Rogue to PMC Min"];

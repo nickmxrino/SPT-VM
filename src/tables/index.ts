@@ -6,21 +6,13 @@ import { default as initHideOut } from "./hideOut";
 import { default as initInRaid } from "./inRaid"; 
 import { default as initAirdrop } from "./airdrop";
 
-export function initMod(): boolean
+export function initMod(): void
 {
-    try
-    {
-        initPlayer();
-        initSkills();
-        initBots();
-        initTraders();
-        initHideOut();
-        initInRaid();
-        initAirdrop();
-        return true;
-    }
-    catch (err)
-    {
-        return false;
-    }
+    initPlayer();
+    initSkills();
+    initBots();
+    initTraders();
+    initHideOut();
+    initInRaid();
+    initAirdrop();
 }
