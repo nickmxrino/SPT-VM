@@ -61,6 +61,18 @@
         }
     },
 
+    "Inertia Multipliers": {
+        "Note": "Lower values mean less inertia, except for leaning.",
+
+        "Direction Change": 0.6,
+        "Walking Inertia": 0.6,
+        "Leaning Speed": 1.3,
+        "Stopping Inertia": 0.6,
+        
+        "Jumping": 0.6,
+        "Falling": 0.6
+    },
+
     "Hideout": {
         "Instant Construction": false,
         "Construction Modifier": 1.0,
