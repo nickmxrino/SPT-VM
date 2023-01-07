@@ -49,6 +49,14 @@ format: `option = default / type : property descripton`
 **Disable Insurance** = *false* / boolean : disables prapor & therapist insurance options   
 **Hybrid Clothing** = *false* / boolean : allow usec clothing on bears and vice-versa    
 
+### Inertia Section
+**Direction Change** = *0.6* / float : inertia in mouse movement   
+**Walking Inertia** = *0.6* / float : inertia in generic walking   
+**Leaning Speed** = *1.3* / float : inertia in leaning (higher = faster)   
+**Stopping Inertia** = *0.6* / float : inertia effectiveness in stopping power   
+**Jumping** = *0.6* / float : measures inertia power after jumping   
+**Falling** = *0.6* / float : measures inertia power after falling from a height   
+
 ### Hideout Section
 **Instant Construction** = *false* / boolean : make all construction instant    
 **Construction Modifier** = *1.0* / float : multiply all construction times by value   
